@@ -77,8 +77,8 @@ class Square extends Polygon {
   } 
 }
 ```
-### (b) Programming Tool: GitHub
+### (b) Programming Tool: Visual Studio Code
 
-GitHub is an American company that provides hosting for software development version control using Git. It is a subsidiary of Microsoft, which acquired the company in 2018 for $7.5 billion.
+Visual Studio Code is a source-code editor developed by Microsoft for Windows, Linux and macOS. It includes support for debugging, embedded Git control and GitHub, syntax highlighting, intelligent code completion, snippets, and code refactoring.
 
-[GitHub] (https://github.com)
+[Visual Studio Code] (https://code.visualstudio.com/)
