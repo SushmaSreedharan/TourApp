@@ -31,3 +31,24 @@
 ### (a)
 
 ### (b)
+
+## Question 4
+
+### (a)
+
+1. JavaScript
+2. Java
+3. C++
+
+### (b)
+
+* Microsoft Windows
+* Linux
+* macOS
+* Android
+
+### (c)
+
+* Visual Studio Code
+* Brackets
+* Notepad++
