@@ -14,3 +14,9 @@ NPM version: 6.9.0
 ### (d)
 
 ![Developer-tool Screenshot](images/commonmark.png)
+
+## Question 2 
+
+### (c)
+
+![Developer-tool Screenshot](images/parcel.png)
