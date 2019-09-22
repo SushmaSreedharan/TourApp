@@ -1,19 +1,19 @@
+#tableHeader li {
+    padding: 5px;
+    width: 13%;
+}
 
-#tableHeader li{
-    padding: 10px;
-
+#tableHeader {
+    display: flex;
+    list-style-type: none;
 }
 
 #tableItems {
-list-style-type: none;
     display: flex;
-    
 }
 
-#tableHeader{ 
-    display: flex;
-        list-style-type: none;
-    }
-#tableContainer,#tableContentContainer{
-    display: grid;
+#tableItems li {
+    padding: 5px;
+    list-style-type: none;
+    width: 13%;
 }
