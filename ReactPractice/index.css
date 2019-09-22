@@ -1,0 +1,19 @@
+
+#tableHeader li{
+    padding: 10px;
+
+}
+
+#tableItems {
+list-style-type: none;
+    display: flex;
+    
+}
+
+#tableHeader{ 
+    display: flex;
+        list-style-type: none;
+    }
+#tableContainer,#tableContentContainer{
+    display: grid;
+}
