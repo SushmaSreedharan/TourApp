@@ -21,6 +21,57 @@ NPM version: 6.9.0
 
 ![Developer-tool Screenshot](images/parcel.png)
 
+## Question 3 
+
+### (b)
+
+![Developer-tool Screenshot](images/markdown.png)
+
+```HTML
+<!DOCTYPE html>
+<html>
+
+<head>
+     <link rel="stylesheet" href="processMD.css"/>
+    <title>Parcel</title>
+</head>
+
+<body>
+    <div id="mdProcessContainer" >
+    <h1>Markdown Processor</h1>
+    <h2>Type Markdown here</h2>
+    <div><textarea id="inputText" >
+ </textarea></div>
+    <div><button id="convert-btn" type="button" >Convert to HTML</button></div>
+    <h2>Rendered HTML here</h2>
+    <div id="outputText" rows="4" cols="50">
+</div>
+</div>
+ <script src="processMD.js">
+    </script>
+</body>
+</html>
+
+```
+
+```javaScript
+import commonmark from "commonmark";
+var convertBtn = document.getElementById("convert-btn");
+var mdText = document.getElementById("inputText");
+var result="";
+var parsed="";
+var reader = new commonmark.Parser();
+var writer = new commonmark.HtmlRenderer();
+    convertBtn.addEventListener("click", function () {
+    console.log(mdText.value);
+    parsed = reader.parse(mdText.value);
+    result = writer.render(parsed);
+    let htmlSection = document.getElementById("outputText");
+    htmlSection.innerHTML = result;
+ 
+});
+```
+
 ## Question 5
 
 ### (a)
