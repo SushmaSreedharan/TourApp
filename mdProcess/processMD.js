@@ -1,3 +1,10 @@
+import hljs from 'highlight.js';
+import 'highlight.js/styles/idea.css';
+import javascript from 'highlight.js/lib/languages/javascript';
+import 'highlight.js/styles/github.css';
+hljs.registerLanguage('javascript', javascript);
+hljs.configure({useBR:true});
+
 import commonmark from "commonmark";
 var convertBtn = document.getElementById("convert-btn");
 var mdText = document.getElementById("inputText");
@@ -10,6 +17,5 @@ var writer = new commonmark.HtmlRenderer();
     parsed = reader.parse(mdText.value);
     result = writer.render(parsed);
     let htmlSection = document.getElementById("outputText");
-    htmlSection.innerHTML = result;
- 
+   htmlSection.innerHTML = hljs.highlightAuto(result).value;
 });

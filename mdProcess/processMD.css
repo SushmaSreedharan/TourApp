@@ -3,14 +3,16 @@
 }
 #inputText, #outputText{
     height: 10em;
-width:40%;
+    width:40%;
+    margin: auto;
+  
 }
 #convert-btn{
     margin:auto;
-    margin-left: 12em;
     padding: 0.5em;
 }
 #mdProcessContainer{
+    text-align: center;
     width:70%;
     margin:auto;
     
