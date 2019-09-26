@@ -100,6 +100,24 @@ var writer = new commonmark.HtmlRenderer();
    htmlSection.innerHTML = hljs.highlightAuto(result).value;
 });
 ```
+### (b)
+
+[Markdown to HTML](http://csweb01.csueastbay.edu/~rg4984/mdProcess/processMD.html)
+
+### (c)
+dist/processMD.1effedb3.js.map        1.44 MB     
+dist/processMD.1effedb3.js          884.77 KB    
+dist/processMD.6a913089.css.map       3.33 KB       
+dist/processMD.6a913089.css           1.73 KB    
+dist/processMD.b49960ad.css.map         534 B     
+dist/processMD.html                     527 B     
+dist/processMD.b49960ad.css             235 B     
+
+**Reduce JS file size by:**
+1.We can use server side compression to reduce the size of javaScript files.
+2.Minify JS(removes unnecessary characters from source code) can be used.
+3.Intelligent coding using CSS shorthand.
+
 
 ## Question 5
 
