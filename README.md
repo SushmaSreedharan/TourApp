@@ -75,6 +75,8 @@ var writer = new commonmark.HtmlRenderer();
 
 ### (a)
 
+If your build tool processes CSS from your JavaScript entry point, you can import the stylesheet directly into your module.
+
 ![Developer-tool Screenshot](images/highlight.png)
 
 ```javascript
