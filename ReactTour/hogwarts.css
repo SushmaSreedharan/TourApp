@@ -1,0 +1,85 @@
+ul {
+    list-style-type: none;
+    margin: auto;
+    overflow: hidden;
+    display: flex;
+
+    background-color: white;
+
+}
+
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+
+
+li a:hover {
+    background-color: grey;
+}
+
+.CoName {
+    float: left;
+    padding: 11px 11px 11px 60px;
+    background-color: white;
+    font-size: 24px;
+}
+
+.nav-bar {
+    display: inline;
+}
+
+main {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    padding: 50px;
+}
+
+body {
+    background-color: black;
+    margin-top: unset;
+
+}
+
+#MemberForm {
+    display: grid;
+    grid-template-columns: 22em 16em;
+    padding: 1em;
+    grid-row-gap: 1em;
+    grid-column-gap: 1em;
+    margin: 0.5em;
+    border: solid 0.5px #0A1C2B;
+    border-radius: 10px;
+    max-width: 40em;
+}
+
+#MemberForm label {
+    justify-self: end;
+    font-family: sans-serif;
+}
+
+#button {
+    padding: 0.5em;
+
+    background-color: darkgray;
+    text-decoration-color: #0A1C2B;
+
+}
+
+.nav-container {
+    width: -webkit-fill-available;
+    position: fixed;
+    margin: auto;
+
+
+}
+
+.nav-container ul {
+    display: flex;
+    justify-content: space-around;
+}
