@@ -277,6 +277,7 @@ export default About;
 
 ![Developer-tool Screenshot](images/login4a.png)
 
+### (b)
 ```javascript
    handleInputChange(event){
     this.setState({email: event.target.value});
@@ -311,7 +312,7 @@ export default About;
       }
 ```
 
-### (b)
+### (c)
 
 
 ```javascript
