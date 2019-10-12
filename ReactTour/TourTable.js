@@ -8,15 +8,13 @@ const row = props.tourData.map((tourDataRow,index) =>
 <td>{tourDataRow.date}</td></tr>
                         );
 return (
- 
-   
       <div>
-      <table id="tour-table">
-      <tr >
-    <th>Name</th>
-    <th>Date</th>
-   </tr>
-  <tr >{row}</tr>
+        <h1>Tours</h1>
+      <table >
+  <tr> <td id="table-header">Name</td>
+    <td>Date</td></tr> 
+ 
+  {row}
 
     </table>
 

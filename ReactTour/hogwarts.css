@@ -114,5 +114,19 @@ body {
     font-family: sans-serif; 
 }
 #tour-table{
+  
     border: solid 1px black;
+
+}
+#tour-table tr{
+    border: solid 1px red !important;
+}
+table, th, td {
+    border: 1px solid black;
+  }
+td,tr{
+    padding: 5px;
+}
+table{
+    width:100%;
 }
