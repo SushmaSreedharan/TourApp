@@ -1,9 +1,9 @@
 import React from "react";
 import "./hogwarts.css";
 import About from "./About.js";
+import Login from "./Login.js";
 import Home from "./Home.js";
-import hogwartsLogo from "../images/hogwarts-logo.jpg";
-import hogwartsMap from "../images/hogwarts-map.jpg";
+
 
 class GuestApp extends React.Component {
     constructor(props) {
@@ -28,7 +28,7 @@ class GuestApp extends React.Component {
     handleLoginClick(event) {
         console.log(event);
         console.log(event.target)
-        console.log("You pressed a button");
+        console.log("You  the login pressed a button");
         this.setState({showing: "login"});
     }
     
@@ -44,7 +44,7 @@ class GuestApp extends React.Component {
                 contents = <About />;
                 break;
             case "login":
-                contents = <h1>Not implemented yet!</h1>;
+                contents = <Login />;
                 break;
             default:
                 contents = <h2>Warning something went wrong!!!</h2>;

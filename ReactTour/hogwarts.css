@@ -57,6 +57,7 @@ body {
     border-radius: 10px;
     max-width: 40em;
 }
+ 
 
 #MemberForm label {
     justify-self: end;
@@ -82,4 +83,33 @@ body {
 .nav-container ul {
     display: flex;
     justify-content: space-around;
+}
+
+#login-button{
+
+    width: 55%;
+    background: darkgray;
+    font-size: 1em;
+}
+#login-label{
+    padding:5px;
+}
+#login-input{
+    margin: 10px;
+    width: 25em;
+    height: 2em;
+    
+}
+
+.login-form{
+    padding:20px;
+    background: aliceblue;
+    margin-top: 50px;
+    padding: 20px;
+    display:grid;
+
+} 
+.login-form label{
+    justify-self: end;
+    font-family: sans-serif; 
 }
