@@ -1,8 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import chemElements from "./elements.json";
+
+
 
 function PeriodicTable(props) {
+   debugger;
     
 const row = props.chemElements.map((chemDetails,index)=> 
                         <ul id="tableItems">

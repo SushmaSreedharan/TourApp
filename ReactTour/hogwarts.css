@@ -113,3 +113,6 @@ body {
     justify-self: end;
     font-family: sans-serif; 
 }
+#tour-table{
+    border: solid 1px black;
+}

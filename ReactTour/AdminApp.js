@@ -32,7 +32,6 @@ export default class AdminApp extends React.Component {
     handleLogoutClick(){
         console.log("logout clicked");
         this.props.logout();
-        
     }
     // Renders component based on current state and props
     render() {

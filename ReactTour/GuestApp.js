@@ -3,6 +3,7 @@ import "./hogwarts.css";
 import About from "./About.js";
 import Login from "./Login.js";
 import Home from "./Home.js";
+import Tours from "./Tours";
 
 
 class GuestApp extends React.Component {
@@ -31,6 +32,12 @@ class GuestApp extends React.Component {
         console.log("You  the login pressed a button");
         this.setState({showing: "login"});
     }
+    handleToursClick(event) {
+        console.log(event);
+        console.log(event.target)
+        console.log("You  the login pressed a button");
+        this.setState({showing: "tours"});
+    }
     
   
     // Renders component based on current state and props
@@ -46,6 +53,9 @@ class GuestApp extends React.Component {
             case "login":
                 contents = <Login loginAuthentication = {this.props.loginAuthentication} />;
                 break;
+                case "tours":
+                    contents = <Tours />;
+                    break;
             default:
                 contents = <h2>Warning something went wrong!!!</h2>;
         }
@@ -54,7 +64,7 @@ class GuestApp extends React.Component {
         <nav className="nav-container">
         <span className="CoName">Hogwarts tour</span>
             <ul>
-                <li><a href="#">Coming Tours</a></li>
+                <li><a onClick={this.handleToursClick.bind(this)}>Coming Tours</a></li>
                 <li><a onClick={this.handleLoginClick.bind(this)}>Muggle Login</a></li>
                 <li><a href="signup.html">Newsletter signup</a></li>
                 <li><a onClick={this.handleAboutClick.bind(this)}>About Us</a></li>

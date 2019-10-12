@@ -1,33 +1,25 @@
 import React from "react";
-import tourData from "./tour.json";
+import "./hogwarts.css";
 
 function TourTable(props) {
     
-const row = props.tourData.map((tourData,index)=> 
-<table style="width:100%">
-  <tr>
-    <th>Name</th>
-    <th>Date</th>
-  </tr>
-  <tr>
-    <td>{tourData.name}</td>
-    <td>{tourData.date}</td>
-  
-  </tr>
-
-</table>
-                        // <ul id="tableItems">
-                        // <li>{tourData.name}</li>
-                        // <li>{tourData.date}</li>
-                        // <li>{chemDetails.symbol}</li>
-                        // <li>{chemDetails.phase}</li>
-                        // <li>{chemDetails.year_of_discovery}</li>
-                        // </ul>
+const row = props.tourData.map((tourDataRow,index) => 
+<tr ><td>{tourDataRow.name}</td>
+<td>{tourDataRow.date}</td></tr>
                         );
 return (
-   <div>
-      {/* <ul id = "tableHeader">{props.desiredCols.map((cols)=> <li>{cols}</li>)}</ul> */}
-      <div>{row}</div>
+ 
+   
+      <div>
+      <table id="tour-table">
+      <tr >
+    <th>Name</th>
+    <th>Date</th>
+   </tr>
+  <tr >{row}</tr>
+
+    </table>
+
    </div>
 );
 }
