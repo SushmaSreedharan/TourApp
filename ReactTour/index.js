@@ -13,13 +13,24 @@ class App extends React.Component {
         this.state = {
             role: "guest"
         }; // We will have "user" and "admin" roles too.
+        this.loginAuthentication = this.loginAuthentication.bind(this);
     }
- 
+    loginAuthentication(newRole, userInfo) {
+    if(newRole == "admin")    {
+    console.log("login authentication clicked");
+    console.log(userInfo);
+    this.setState({role:"admin"});
+    }
+    else
+     this.setState({role:"customer"});
+     console.log(userInfo);
+      }
+
     render() {
         let contents = null;
         switch (this.state.role) {
             case "guest":
-                contents = <GuestApp />;
+                contents = <GuestApp loginAuthentication={this.loginAuthentication} />;
                 break;
             case "customer":
                 contents = <CustomerApp />;

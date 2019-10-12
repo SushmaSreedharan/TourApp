@@ -276,3 +276,37 @@ export default About;
 ### (a)
 
 ![Developer-tool Screenshot](images/login4a.png)
+
+```javascript
+   handleInputChange(event){
+    this.setState({email: event.target.value});
+     console.log(event.target.value);
+   }
+   handleSubmit(event){
+    event.preventDefault();
+    if(this.state.email == "admin@email.org"){
+      var userInfo = {name:"sushma ", netid:"rg4984",newRole:"admin"};
+      console.log("admin clicked");
+      this.props.loginAuthentication(this.state.email,userInfo);
+       }
+       else if(this.state.email == "cust@email.org"){
+       var userInfo = {name:"sushma ", netid:"rg4984",newRole:"cust"};
+        console.log("customer clicked");
+        this.props.loginAuthentication(this.state.email,userInfo);
+         } 
+
+   }
+   ```
+
+   ```javascript
+    loginAuthentication(newRole, userInfo) {
+    if(newRole == "admin")    {
+    console.log("login authentication clicked");
+    console.log(userInfo);
+    this.setState({role:"admin"});
+    }
+    else
+     this.setState({role:"customer"});
+     console.log(userInfo);
+      }
+```
