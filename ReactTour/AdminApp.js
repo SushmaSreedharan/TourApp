@@ -29,6 +29,11 @@ export default class AdminApp extends React.Component {
         console.log("You pressed a button");
         this.setState({showing: "about"});
     }
+    handleLogoutClick(){
+        console.log("logout clicked");
+        this.props.logout();
+        
+    }
     // Renders component based on current state and props
     render() {
         let contents = null;
@@ -54,7 +59,7 @@ export default class AdminApp extends React.Component {
                 <li><a onClick={this.handleCustomersClick.bind(this)}>Customer Management</a></li>
                 <li><a onClick={this.handleAboutClick.bind(this)}>About Us</a></li>
                 <li><a onClick={this.handleHomeClick.bind(this)}>Home</a></li>
-                <li><a href="#">Logout</a></li>
+                <li><a onClick={this.handleLogoutClick.bind(this)}>Logout</a></li>
             </ul>
 
         </nav>

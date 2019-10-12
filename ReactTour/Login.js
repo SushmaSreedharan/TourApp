@@ -22,17 +22,18 @@ class Login extends React.Component {
    handleSubmit(event){
     event.preventDefault();
     if(this.state.email == "admin@email.org"){
-      var userInfo = {name:"sushma ", netid:"rg4984",newRole:"admin"};
+      
       console.log("admin clicked");
-      this.props.loginAuthentication(this.state.email,userInfo);
+      this.props.loginAuthentication(this.state.email);
        }
        else if(this.state.email == "cust@email.org"){
-       var userInfo = {name:"sushma ", netid:"rg4984",newRole:"cust"};
+      
         console.log("customer clicked");
-        this.props.loginAuthentication(this.state.email,userInfo);
+        this.props.loginAuthentication(this.state.email);
          } 
 
    }
+
 
     render() {
         

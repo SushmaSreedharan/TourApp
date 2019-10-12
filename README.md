@@ -310,3 +310,24 @@ export default About;
      console.log(userInfo);
       }
 ```
+
+### (b)
+
+
+```javascript
+
+  handleLogoutClick(){
+        console.log("logout clicked");
+        this.props.logout();
+    }
+```
+```javascript
+
+logout(){
+
+     console.log("logout in app clicked");
+     this.setState({role:"guest"});
+     this.setState({userInfo: undefined});
+        //   console.log(userInfo);
+      }
+```

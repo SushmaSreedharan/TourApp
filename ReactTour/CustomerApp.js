@@ -31,7 +31,7 @@ class CustomerApp extends React.Component {
         this.setState({showing: "about"});
     }
  
-
+  
     // Renders component based on current state and props
     render() {
         let contents = null;

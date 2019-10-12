@@ -11,19 +11,31 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            role: "guest"
+            role: "guest",
+            userInfo: {name:"", netid:"", newRole:""}
         }; // We will have "user" and "admin" roles too.
         this.loginAuthentication = this.loginAuthentication.bind(this);
+        this.logout = this.logout.bind(this);
     }
     loginAuthentication(newRole, userInfo) {
-    if(newRole == "admin")    {
+    if(newRole == "admin@email.org")    {
+    var userInfo = {name:"sushma ", netid:"rg4984",newRole:"admin"};
     console.log("login authentication clicked");
     console.log(userInfo);
     this.setState({role:"admin"});
     }
     else
+    {
+    var userInfo = {name:"sushma ", netid:"rg4984",newRole:"cust"};
      this.setState({role:"customer"});
      console.log(userInfo);
+    }
+      }
+      logout(){
+          console.log("logout in app clicked");
+          this.setState({role:"guest"});
+          this.setState({userInfo: undefined});
+        //   console.log(userInfo);
       }
 
     render() {
@@ -33,10 +45,10 @@ class App extends React.Component {
                 contents = <GuestApp loginAuthentication={this.loginAuthentication} />;
                 break;
             case "customer":
-                contents = <CustomerApp />;
+                contents = <CustomerApp logout={this.logout}/>;
                 break;
             case "admin":
-                contents = <AdminApp />;
+                contents = <AdminApp logout={this.logout}/>;
                 break;
             default:
                 contents = <h2>Warning something went wrong!!!</h2>;

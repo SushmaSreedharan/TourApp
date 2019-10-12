@@ -44,7 +44,7 @@ class GuestApp extends React.Component {
                 contents = <About />;
                 break;
             case "login":
-                contents = <Login loginAuthentication = {this.props.loginAuthentication}/>;
+                contents = <Login loginAuthentication = {this.props.loginAuthentication} />;
                 break;
             default:
                 contents = <h2>Warning something went wrong!!!</h2>;
