@@ -88,7 +88,7 @@ ReactDOM.render(<App />, document.getElementById("root"));
 
 ![Developer-tool Screenshot](images/about2b.png)
 
-![Developer-tool Screenshot](images/login.png)
+![Developer-tool Screenshot](images/login2b.png)
 
 ```javascript
 class GuestApp extends React.Component {
@@ -258,3 +258,14 @@ class About extends React.Component {
 export default About;
 
 ```
+
+## Question 3
+
+
+### (a)
+
+![Developer-tool Screenshot](images/customerApp3a.png)
+
+### (b)
+
+![Developer-tool Screenshot](images/adminApp3b.png)
