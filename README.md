@@ -9,3 +9,7 @@
 ### (a)
 
 ![Developer-tool Screenshot](images/folderStructure.png)
+
+### (b)
+
+![Developer-tool Screenshot](images/addTour.png)

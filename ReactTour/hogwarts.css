@@ -115,18 +115,31 @@ body {
 }
 #tour-table{
   
-    border: solid 1px black;
+    border: solid 1px gray;
 
 }
-#tour-table tr{
-    border: solid 1px red !important;
-}
+
 table, th, td {
-    border: 1px solid black;
+    border: 1px solid gray;
   }
 td,tr{
     padding: 5px;
 }
 table{
     width:100%;
+}
+#add-tour{
+    display: grid;
+    border: solid 1px gray;
+    padding: 1em;
+
+}
+#add-tour label{
+    padding: 1em;
+    justify-self: right;
+}
+#add-tour input{
+    margin: 5px;
+    height: 2em;
+    width: 35em;
 }
