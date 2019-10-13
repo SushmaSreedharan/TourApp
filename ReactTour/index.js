@@ -1,11 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import hogwartsLogo from "../images/hogwarts-logo.jpg";
-import hogwartsMap from "../images/hogwarts-map.jpg";
 import "./hogwarts.css";
-import AdminApp from "./AdminApp.js";
-import CustomerApp from "./CustomerApp.js";
-import GuestApp from "./GuestApp.js";
+import AdminApp from "./admin/AdminApp";
+import CustomerApp from "./cust/CustomerApp";
+import GuestApp from "./guest/GuestApp.js";
 
 class App extends React.Component {
     constructor(props) {

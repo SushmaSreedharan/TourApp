@@ -1,5 +1,5 @@
 import React from "react";
-import "./hogwarts.css";
+import "../hogwarts.css";
 import hogwartsLogo from "../images/hogwarts-logo.jpg";
 import hogwartsMap from "../images/hogwarts-map.jpg";
 

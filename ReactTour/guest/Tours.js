@@ -1,7 +1,7 @@
 import React from "react";
-import "./hogwarts.css";
+import "../hogwarts.css";
 import TourTable from "./TourTable";
-import tourData from "./tour.json";
+import tourData from "../tour.json";
 
 class Tours extends React.Component {
     constructor(props) {

@@ -1,5 +1,5 @@
 import React from "react";
-import "./hogwarts.css";
+import "../hogwarts.css";
 
 class About extends React.Component {
     constructor(props) {

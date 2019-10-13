@@ -1,8 +1,8 @@
 import React from "react";
-import "./hogwarts.css";
-import About from "./About.js";
+import "../hogwarts.css";
 import Login from "./Login.js";
-import Home from "./Home.js";
+import About from "../admin/About";
+import Home from "../admin/Home"
 import Tours from "./Tours";
 
 

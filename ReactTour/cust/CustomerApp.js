@@ -1,9 +1,10 @@
 import React from "react";
-import "./hogwarts.css";
-import About from "./About.js";
-import Home from "./Home.js";
+import "../hogwarts.css";
+import About from "../admin/About.js";
+import Home from "../admin/Home"
 
-export default class AdminApp extends React.Component {
+
+class CustomerApp extends React.Component {
     constructor(props) {
         super(props); // Must call
         // Set up state here
@@ -17,11 +18,11 @@ export default class AdminApp extends React.Component {
         console.log("You pressed a button");
         this.setState({showing: "home"});
     }
-    handleCustomersClick(event) {
+    handleToursClick(event) {
         console.log(event);
         console.log(event.target)
         console.log("You pressed a button");
-        this.setState({showing: "customers"});
+        this.setState({showing: "tours"});
     }
     handleAboutClick(event) {
         console.log(event);
@@ -29,10 +30,8 @@ export default class AdminApp extends React.Component {
         console.log("You pressed a button");
         this.setState({showing: "about"});
     }
-    handleLogoutClick(){
-        console.log("logout clicked");
-        this.props.logout();
-    }
+ 
+  
     // Renders component based on current state and props
     render() {
         let contents = null;
@@ -43,27 +42,30 @@ export default class AdminApp extends React.Component {
             case "about":
                 contents = <About />;
                 break;
-            case "customers":
+            case "tours":
                 contents = <h1>Not implemented yet!</h1>;
                 break;
+                
             default:
                 contents = <h2>Warning something went wrong!!!</h2>;
         }
-        // Any code you like
-        let navbar =       <header>
-        <nav     className="nav-container">
+
+        let navbar = <header><nav className="nav-container">
+            
+    
         <span className="CoName">Hogwarts tour</span>
-            <ul>
-            <li><a href="#">Tour Management</a></li>
-                <li><a onClick={this.handleCustomersClick.bind(this)}>Customer Management</a></li>
-                <li><a onClick={this.handleAboutClick.bind(this)}>About Us</a></li>
-                <li><a onClick={this.handleHomeClick.bind(this)}>Home</a></li>
-                <li><a onClick={this.handleLogoutClick.bind(this)}>Logout</a></li>
-            </ul>
+        <ul>
+     
+            <li><a onClick={this.handleToursClick.bind(this)}>Tours</a></li>
+            <li><a onClick={this.handleAboutClick.bind(this)}>About Us</a></li>
+            <li><a onClick={this.handleHomeClick.bind(this)}>Home</a></li>
+            <li><a href="#">Logout</a></li>
+        </ul>
 
-        </nav>
+    </nav>
 
-    </header>;
+</header>;
+
         return (
             <div>
             {navbar}
@@ -73,7 +75,7 @@ export default class AdminApp extends React.Component {
             </main></body>
 
     </div> 
-    );
+        );
     }
 }
-// export default AdminApp;
+export default CustomerApp;
