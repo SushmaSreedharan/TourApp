@@ -3,7 +3,8 @@ import "../hogwarts.css";
 import Login from "./Login.js";
 import About from "../admin/About";
 import Home from "../admin/Home"
-import Tours from "./Tours";
+// import Tours from "./Tours";
+import AdminTour from "../admin/AdminTour";
 
 
 class GuestApp extends React.Component {
@@ -54,7 +55,7 @@ class GuestApp extends React.Component {
                 contents = <Login loginAuthentication = {this.props.loginAuthentication} />;
                 break;
                 case "tours":
-                    contents = <Tours />;
+                    contents = <AdminTour />;
                     break;
             default:
                 contents = <h2>Warning something went wrong!!!</h2>;

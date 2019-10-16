@@ -13,19 +13,7 @@ class Tours extends React.Component {
     render() {
         return (
             <div>
-                <div><h2>Add tour</h2>
-                <form id="add-tour">
-                    
-  <label>
-    Name:
-    <input type="text" name="name" />
-  </label>
-  <label>
-    Dates(s):
-    <input type="text" name="name" />
-  </label>
-</form>
-                </div>
+ 
                 <div><TourTable tourData={tourData} /></div>
 
     </div>

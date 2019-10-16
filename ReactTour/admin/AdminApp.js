@@ -2,6 +2,7 @@ import React from "react";
 import "../hogwarts.css";
 import About from "./About.js";
 import Home from "./Home.js";
+import AdminTour from "./AdminTour";
 
 export default class AdminApp extends React.Component {
     constructor(props) {
@@ -33,12 +34,19 @@ export default class AdminApp extends React.Component {
         console.log("logout clicked");
         this.props.logout();
     }
+    handleTourManagement(event){
+        this.setState({showing:"tourmanagement"});
+    }
     // Renders component based on current state and props
     render() {
         let contents = null;
         switch (this.state.showing) {
+       
             case "home":
                 contents = <Home />;
+                break;
+            case "tourmanagement":
+                contents = <AdminTour />
                 break;
             case "about":
                 contents = <About />;
@@ -54,7 +62,7 @@ export default class AdminApp extends React.Component {
         <nav     className="nav-container">
         <span className="CoName">Hogwarts tour</span>
             <ul>
-            <li><a href="#">Tour Management</a></li>
+            <li><a onClick={this.handleTourManagement.bind(this)}>Tour Management</a></li>
                 <li><a onClick={this.handleCustomersClick.bind(this)}>Customer Management</a></li>
                 <li><a onClick={this.handleAboutClick.bind(this)}>About Us</a></li>
                 <li><a onClick={this.handleHomeClick.bind(this)}>Home</a></li>
