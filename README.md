@@ -168,6 +168,22 @@ In most cases, the value of this is determined by how a function is called. It c
 Global context :
 In the global execution context (outside of any function), this refers to the global object, whether in strict mode or not.
 
+### (b)
+
+```javascript
+myFunction(); //points to the object window
+```
+
+```javascript
+myObj1.method1 = myFunction;
+myObj1.method1(); // calls myObj1 where myObj1 =  {course:"WebDev", students:36, method1:f}. here method1 is a function named myFunction
+```
+
+```javascript
+func2 = myObj1.method1.bind(myObj2); // the bind object assigns this to a function that will be passed as a callback, in this case we don't evaluate a function. We just bind a specific object to this
+
+func2(); // calls myObj2 where myObj2 = {course:"WebSys", students:31}
+```
 
 ### (c)
 
