@@ -2,14 +2,16 @@ import React from "react";
 import "../hogwarts.css";
 
 function TourTable(props) {
-const row = props.tourData.map((tourDataRow,index) => 
-<tr> <td><button id="delete-button">Delete</button></td>
-
+console.log(props.tourData);
+let data = Array.from(props.tourData);
+let row = data.map(function(tourDataRow, i){
+return <tr key = {i}> <td><button id="delete-button" onClick={props.deleteTour.bind(null,i)}>Delete</button></td>
 <td>{tourDataRow.name}</td>
-<td>{tourDataRow.date}</td></tr>);
+<td>{tourDataRow.date}</td></tr>
+});
+
 return (
       <div>
-       
         <h1>Tours</h1>
       <table >
       

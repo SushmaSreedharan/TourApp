@@ -13,9 +13,7 @@ class Tours extends React.Component {
     render() {
         return (
             <div>
- 
                 <div><TourTable tourData={tourData} /></div>
-
     </div>
         );
     }

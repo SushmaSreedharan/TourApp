@@ -9,21 +9,16 @@ class AdminTour extends React.Component {
         this.state = {
             addName:"Just foiling around 3",
             addDate:"Whenever possible",   
-            tours :{
-                name:"name",
-                date: "name"
-            }
+            tours : tourData
+            
         }
         
     }
-   
 
     addTour(event){
     event.preventDefault();
-    this.setState({tours: {name: this.state.addName, date: this.state.addDate}});
-    event.preventDefault();
     console.log();
-    tourData.push({"name": this.state.addName, "date": this.state.addDate});
+    this.setState({tours: this.state.tours.concat([{name:this.state.addName, date:this.state.addDate}])});
 
        }
 
@@ -41,7 +36,13 @@ class AdminTour extends React.Component {
         console.log(event.target.value);
         console.log("date change");
       }     
-    
+      deleteTour(index){
+          console.log("delete clicked");
+          let subTours = {};
+          subTours = this.state.tours.filter((i) => index !== i );
+          let toursNew = Object.assign({}, this.state.tours, subTours);
+          this.setState({tours: toursNew});
+      }    
 
 
     render() {
@@ -60,7 +61,7 @@ class AdminTour extends React.Component {
   <button id="login-button" onClick={this.addTour.bind(this)} >Add</button>
 </form>
 </div>
-<TourTable tourData={tourData} tours={this.state.tours} />
+<TourTable tourData={this.state.tours}  deleteTour={this.deleteTour.bind(this)} />
 </div>
         );
     }
