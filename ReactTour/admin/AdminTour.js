@@ -10,9 +10,7 @@ class AdminTour extends React.Component {
             addName:"Just foiling around 3",
             addDate:"Whenever possible",   
             tours : tourData
-            
         }
-        
     }
 
     addTour(event){
@@ -37,11 +35,13 @@ class AdminTour extends React.Component {
         console.log("date change");
       }     
       deleteTour(index){
-          console.log("delete clicked");
-          let subTours = {};
-          subTours = this.state.tours.filter((i) => index !== i );
+         let subTours = {};
+         subTours = this.state.tours;
+        
+        subTours.splice(index,1);
+        //  subTours = this.state.tours.filter((i) => index !== i );
           let toursNew = Object.assign({}, this.state.tours, subTours);
-          this.setState({tours: toursNew});
+          this.setState({tourData: toursNew});
       }    
 
 

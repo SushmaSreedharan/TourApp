@@ -82,12 +82,71 @@ class AdminTour extends React.Component {
       } 
 
 ```
+## Question 1 
+
+### (a)
+
+![Developer-tool Screenshot](images/delTour1.png)
+
+![Developer-tool Screenshot](images/delTour2.png)
+
+### (b)
+```javascript
+
+function TourTable(props) {
+var row = props.tourData.map(function(tourDataRow, i){
+return <tr key = {"t" + i} > <td><button id="delete-button" onClick={props.deleteTour.bind(null, i)}>Delete</button></td>
+<td>{tourDataRow.name}</td>
+<td>{tourDataRow.date}</td></tr>
+});
+
+return (
+      <div>
+        <h1>Tours</h1>
+      <table >
+      
+  <tr><td></td><td id="table-header">Name</td>
+    <td>Date</td>
+</tr> 
+
+
+  {row}
+
+    </table>
+
+   </div>
+);
+}
+```
+
+### (c)
+```javascript
+      deleteTour(index){
+         let subTours = {};
+         subTours = this.state.tours;
+        
+        subTours.splice(index,1);
+        //  subTours = this.state.tours.filter((i) => index !== i );
+          let toursNew = Object.assign({}, this.state.tours, subTours);
+          this.setState({tourData: toursNew});
+      }  
+```
 
 ## Question 3
 
 ### (a)
 
 ![Developer-tool Screenshot](images/networking.png)
+
+### (b)
+
+![Developer-tool Screenshot](images/ethernetAddress.png)
+
+### (b)
+
+My IPv4 address is '127.0.01' 
+It falls under the host category 
+Description: Used for loopback addresses to the local host
 
 ### (c)
 
