@@ -45,6 +45,7 @@ X-Frame-Options: SAMEORIGIN
 ### (a)
 
 ![Developer-tool Screenshot](images/promise.png)
+
 ```javascript
 const rp = require('request-promise-native');
 
@@ -67,4 +68,7 @@ rp(options)
         console.log(`The fastest 10 second speed average was: ${avgSpeed}`);
         console.log(`The longest single day distance was: ${maxDis} `);
     });
-    ```
+```
+### (b)
+
+![Developer-tool Screenshot](images/map.png)
