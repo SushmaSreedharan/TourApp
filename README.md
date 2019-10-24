@@ -196,3 +196,54 @@ app.listen(port,host,function(){
     console.log(`Combined app listening on ${host}:${port}`);
   });
 ```
+
+## Question 4
+### (a)
+
+![Developer-tool Screenshot](images/tourJson.png)
+
+```javascript
+var tours = require('../ReactTour/tour.json');
+console.log(tours);
+var express = require('express');
+
+var app = express();
+
+port = 3000; 
+
+host = '127.0.0.1'; 
+app.get('/tours',function(req,res){
+  res.send(JSON.stringify(tours), null, "\t");
+});
+
+app.listen(port,host,function(){
+  console.log(`Tour Server listening on ${host}:${port}`);
+});
+
+```
+
+### (b)
+
+![Developer-tool Screenshot](images/tourTest.png)
+
+```javascript
+const rp = require('request-promise-native');
+
+let options = {
+    uri: 'http://127.0.0.1:3000/tours',
+    method: 'GET', 
+    json: true,
+    
+};
+rp(options)
+    .then(function (res) {
+        debugger;let tourNumber=0;
+        JSON.stringify(res);
+
+        for(var val in res)
+        {tourNumber++;
+        console.log(`Tour ${tourNumber} name ${res[val].name}, date: ${res[val].date}` );}
+
+    });
+
+```
