@@ -20,10 +20,10 @@ Version: HTTP/1.1
 
 Provisional headers are shown
 
-Origin: https://bb.csueastbay.edu
-Referer: https://bb.csueastbay.edu/ui-ultra/css/ultra.css?v=3700.11.0-rel.13+1c185dd
-Sec-Fetch-Mode: cors
-User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36
+Origin: https://bb.csueastbay.edu  
+Referer: https://bb.csueastbay.edu/ui-ultra/css/ultra.css?v=3700.11.0-rel.13+1c185dd  
+Sec-Fetch-Mode: cors  
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/ 77.0.3865.120 Safari/537.36
 
 ### (c)
 
@@ -170,3 +170,29 @@ app.listen(port,host,function(){
 Getting the following error due to mac OS:
 
 ![Developer-tool Screenshot](images/errorMsg2.png)
+
+### (c)
+
+Getting the following error due to mac OS:
+
+![Developer-tool Screenshot](images/errorMsg3.png)
+
+```javascript
+var express = require('express');
+
+var app = express();
+var date = new Date();
+port = 34942; 
+
+host = '127.0.1.1'; 
+app.get('/date',function(req,res){
+  res.send(`Date and time:${date}`);
+});
+app.get('/netID',function(req,res){
+    res.send(`Name:Sushma,NetID:rg4984`);
+  });
+
+app.listen(port,host,function(){
+    console.log(`Combined app listening on ${host}:${port}`);
+  });
+```
