@@ -106,6 +106,7 @@ rp(options)
 ![Developer-tool Screenshot](images/map.png)
 
 ### (c)
+![Developer-tool Screenshot](images/point.png)
 
 ```javascript
 const rp = require('request-promise-native');
@@ -120,6 +121,7 @@ rp(options)
     .then(function (res) {
         debugger;
         console.log(`The start time of track_2014_1013: ${res.start_time}` );
+        console.log(`The start time of track_2014_1013: ${(res.points.length)/60}` );
 
     });
 ```
