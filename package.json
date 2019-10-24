@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/CSUEB-DrB-CS/assignments-SushmaSreedharan#readme",
   "dependencies": {
+    "express": "^4.17.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "request": "^2.88.0",
