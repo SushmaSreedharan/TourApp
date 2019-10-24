@@ -19,6 +19,8 @@
   "homepage": "https://github.com/CSUEB-DrB-CS/assignments-SushmaSreedharan#readme",
   "dependencies": {
     "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "react-dom": "^16.9.0",
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.7"
   }
 }
