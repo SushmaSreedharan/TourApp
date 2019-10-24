@@ -121,9 +121,10 @@ rp(options)
     .then(function (res) {
         debugger;
         console.log(`The start time of track_2014_1013: ${res.start_time}` );
-        console.log(`The start time of track_2014_1013: ${(res.points.length)/60}` );
+        console.log(`The session lasted ${(res.points.length)/60} minutes` );
 
     });
+
 ```
 
 
