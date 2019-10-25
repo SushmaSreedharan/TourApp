@@ -4,7 +4,6 @@ let options = {
     uri: 'https://windsurf.grotto-networking.com/data/logs/windEvents2014.json',
     method: 'GET', 
     json: true,
-    
 };
 rp(options)
     .then(function (res) {
