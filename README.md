@@ -254,8 +254,8 @@ rp(options)
 ## Question 5
 ### (a)
 ![Developer-tool Screenshot](images/tourTest.png)
-![Developer-tool Screenshot](images/addtourTest.png)
-![Developer-tool Screenshot](images/tourServerAddtour.png)
+![Developer-tool Screenshot](images/addTourTest.png)
+![Developer-tool Screenshot](images/tourServerAddTour.png)
 
 ```javascript
 const rp = require('request-promise-native');
