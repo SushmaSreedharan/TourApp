@@ -10,7 +10,6 @@ rp(options)
     .then(function (res) {
         debugger;let tourNumber=0;
         JSON.stringify(res);
-
         for(var val in res)
         {tourNumber++;
         console.log(`Tour ${tourNumber} name ${res[val].name}, date: ${res[val].date}` );}

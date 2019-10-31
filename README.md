@@ -2,301 +2,165 @@
 
 **NetID**: rg4984
 
-# Homework #7 Solution
+# Homework #8 Solution
 
 ## Question 1 
 
 ### (a)
 
-Request Method: GET  is used in the request
+"Confidentiality refers to protecting information from being accessed by unauthorized parties. Only the people who are authorized to do so can gain access to sensitive data."
 
-Response code is 200 - This indicates that the request has succeeded.
- 
-Version: HTTP/1.1
+**Recent data breach**
+
+"Buca di Beppo's parent company, Earl Enterprises, was hit with a major data breach that potentially lasted from May 23, 2018 to March 18, 2019. The breach may have exposed customers' names and credit- and debit-card numbers, as well as their expiration dates."
+
+Another name for loss of confidentiality: **breach**
 
 ### (b)
 
-**Request Headers**
-
-Provisional headers are shown
-
-Origin: https://bb.csueastbay.edu  
-Referer: https://bb.csueastbay.edu/ui-ultra/css/ultra.css?v=3700.11.0-rel.13+1c185dd  
-Sec-Fetch-Mode: cors  
-User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/ 77.0.3865.120 Safari/537.36
+It's important to check the integrity of a software/file when we download it from the internet to insure that we don't accidentally download malware, viruses etc.
 
 ### (c)
 
-**Response Headers**
+i. "DoS  (Denial of Service attacks): DOS Attack is a type of attack to a network server  with large number or service requests with it cannot handle. DoS (Denial of Service Attack) can causes the server to crash the server and legitimate users are denied the service."
 
-Accept-Ranges: bytes  
-Cache-Control: public  
-Content-Length: 20216  
-Content-Security-Policy: frame-ancestors 'self'  
-Content-Type: font/woff  
-Date: Mon, 30 Sep 2019 04:29:44 GMT  
-ETag: W/"20216-1568281986000"  
-Expires: Wed, 30 Sep 2020 04:29:44 GMT
-Last-Modified: Thu, 12 Sep 2019 09:53:06 GMT
-P3P: CP="CAO PSA OUR"
-Server: openresty/1.9.3.1
-X-Frame-Options: SAMEORIGIN
-
-### (d)
-Server used by blackboard : openresty/1.9.3.1
-
-![Developer-tool Screenshot](images/cookies.png)
-
-### (e)
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_Types#Comments
-protocol: https://
-domain: developer.mozilla.org
-port:
-path: /en-US/docs/Web/JavaScript/Guide/Grammar_and_Types
-query:
-fragment portions: #Comments
-
-https://www.google.com/search?q=gaia+mission&rlz=1CYPO_enUS751
-protocol: https://
-domain: www.google.com
-port:
-path: /search
-query: ?q=gaia+mission&rlz=1CYPO_enUS751
-fragment portions
-
-http://127.0.0.2:8282/static/index.html
-protocol: http://
-domain: 127.0.0.2
-port: 8282
-path: /static/index.html
-query:
-fragment portions:
+ii. Yes, WiFi jammers would be an attack on availability.
 
 ## Question 2
 
 ### (a)
 
-![Developer-tool Screenshot](images/promise.png)
+i. "Credential stuffing is a type of cyberattack where stolen account credentials typically consisting of lists of usernames and/or email addresses and the corresponding passwords (often from a data breach) are used to gain unauthorized access to user accounts through large-scale automated login requests directed against a web application."
 
-```javascript
-const rp = require('request-promise-native');
+Users should not use the same password because of credential stuffing and data breach.
+"There are often data breaches where companies have not stored data such as usernames and passwords securely. This data becomes public knowledge, and it could contain your username and password for certain sites."
 
-let options = {
-    uri: 'https://windsurf.grotto-networking.com/data/logs/windEvents2014.json',
-    method: 'GET', 
-    json: true,
-    
-};
-rp(options)
-    .then(function (res) {
-        debugger;
-    //   console.log(`Grotto status: ${JSON.stringify(res)}`);
-     var val,avgSpeed=0,maxDis=0;
-     for( val in res){
-        avgSpeed= Math.max(res[val].max10sec,avgSpeed);
-      maxDis= Math.max(res[val].distance,maxDis);
-        }
-        console.log(`The number of sailing sessions in 2014 was: ${res.length}` );
-        console.log(`The fastest 10 second speed average was: ${avgSpeed}`);
-        console.log(`The longest single day distance was: ${maxDis} `);
-    });
-```
+"When this type of data becomes available, hackers and cybercriminals perform credential stuffing attacks, using stolen usernames and passwords to attempt to log into various other accounts like banking accounts."
+
+One of my email(sushmacs15@gmail.com) is associated with one data breach through Canva. 
+Another email(sushma.sreedharan15@gmail.com) is associated with no data breaches.
+
 ### (b)
 
-![Developer-tool Screenshot](images/map.png)
+"Two-factor authentication is an extra layer of security used to make sure that people who try to acces their online account are who they say they are."
+
+After entering the username and password, the users are required to provide extra peice of information. This second factor could come from one of the following categories:
+
+Examples:
+
+Something you know: personal identification like PIN
+Something you have: a credit card
+Something you are: biometric pattern of fingerprint
+
+"2  factor authentifcation can be hackable, cybercriminals can use phishing to get around two factor authentication, like a code sent to your cell phone".
 
 ### (c)
-![Developer-tool Screenshot](images/point.png)
 
-```javascript
-const rp = require('request-promise-native');
+"Authorization is a security mechanism used to determine user/client privileges or access levels related to system resources, including computer programs, files, services, data and application features."
 
-let options = {
-    uri: 'https://windsurf.grotto-networking.com/data/tracks/track_2014_10_13.json',
-    method: 'GET', 
-    json: true,
-    
-};
-rp(options)
-    .then(function (res) {
-        debugger;
-        console.log(`The start time of track_2014_1013: ${res.start_time}` );
-        console.log(`The session lasted ${(res.points.length)/60} minutes` );
+"Windows uses New Technology File System (NTFS) to maintain Access Control Lists (ACL) for all resources. The ACL serves as the ultimate authority on resource access."
 
-    });
+"Role-based access control (RBAC) is a method of regulating access to computer or network resources based on the roles of individual users within an enterprise."
 
-```
+
+### (d)
+
+"Accounting measures the resources a user consumes during access. This can include the amount of system time or the amount of data a user has sent and/or received during a session. Accounting is carried out by logging of session statistics and usage information and is used for authorization control, billing, trend analysis, resource utilization, and capacity planning activities."
+
 
 
 ## Question 3
+
 ### (a)
 
 ```javascript
-var express = require('express');
-
-var app = express();
-var date = new Date();
-port = 5555; 
-
-host = '127.0.0.2'; 
-app.get('/date',function(req,res){
-  res.send(`Date and time:${date}`);
-});
-
-app.listen(port,host,function(){
-  console.log(`Date and time app listening on ${host}:${port}`);
-});
+const fs = require('fs');
+const bcrypt = require('bcryptjs');
+const users = require('./usersTours.json');
+let nRounds = 10;
+let hashedUsers = [];
+let newUsers=[];
+let start = new Date(); 
+console.log(`Starting password hashing with nRounds = ${nRounds}, ${start}`);
+let salt = bcrypt.genSaltSync(nRounds); 
+for(var ele in users){
+let passHash = bcrypt.hashSync(`${users[ele].password}`, salt);
+newUsers[ele] ={
+    "firstName": users[ele].firstName,
+    "lastName": users[ele].lastName,
+    "email": users[ele].email,
+    "password":passHash
+};
+hashedUsers.push(newUsers);
+}
+//console.log(hashedUsers);
+let elapsed = new Date - start; 
+console.log(`Finished password hashing, ${elapsed/1000} seconds.`);
+fs.writeFileSync("userTourHash.json", JSON.stringify(hashedUsers, null, 2));
 ```
 
-Getting the following error due to mac OS:
-
-![Developer-tool Screenshot](images/errorMsg.png)
+```javascript
+        {
+      "firstName": "Arlen",
+      "lastName": "Melton",
+      "email": "sided1830@outlook.com",
+      "password": "$2a$10$kWgrYBwiSuCTqnqXtoiBtOhkHAAIphDm31SiAICAPlH/CLdoKXCqS"
+    },
+    {
+      "firstName": "Luna",
+      "lastName": "Munoz",
+      "email": "sylvan2059@live.com",
+      "password": "$2a$10$kWgrYBwiSuCTqnqXtoiBtODk.dDt3lEBfIcaFQnx64kikb/bxl9FS"
+    },
+    {
+      "firstName": "Christoper",
+      "lastName": "Burns",
+      "email": "ox1815@live.com",
+      "password": "$2a$10$kWgrYBwiSuCTqnqXtoiBtOTcBONLtkDaan5cu8NxBqNjmHVgDDf5a"
+    },
+    {
+      "firstName": "Vania",
+      "lastName": "Fleming",
+      "email": "bouto2050@outlook.com",
+      "password": "$2a$10$kWgrYBwiSuCTqnqXtoiBtOgnLJMIIAeAefmGZNRizAMF7lD84RmHa"
+    },
+    {
+      "firstName": "Jermaine",
+      "lastName": "Cannon",
+      "email": "prolongating1890@yandex.com",
+      "password": "$2a$10$kWgrYBwiSuCTqnqXtoiBtOFbLzRnqvzfbcmnMHMOuE3DJalBGEFDa"
+    }
+```
 
 ### (b)
-```javascript
-var express = require('express');
 
-var app = express();
-
-port = 443; 
-
-host = '127.0.0.7'; 
-app.get('/netID',function(req,res){
-  res.send(`Name:Sushma,NetID:rg4984`);
-});
-
-app.listen(port,host,function(){
-  console.log(`NetID app listening on ${host}:${port}`);
-});
-```
-
-Getting the following error due to mac OS:
-
-![Developer-tool Screenshot](images/errorMsg2.png)
-
-### (c)
-
-Getting the following error due to mac OS:
-
-![Developer-tool Screenshot](images/errorMsg3.png)
-
-```javascript
-var express = require('express');
-
-var app = express();
-var date = new Date();
-port = 34942; 
-
-host = '127.0.1.1'; 
-app.get('/date',function(req,res){
-  res.send(`Date and time:${date}`);
-});
-app.get('/netID',function(req,res){
-    res.send(`Name:Sushma,NetID:rg4984`);
-  });
-
-app.listen(port,host,function(){
-    console.log(`Combined app listening on ${host}:${port}`);
-  });
-```
+![Developer-tool Screenshot](images/hassPassword.png)
 
 ## Question 4
+
 ### (a)
 
-![Developer-tool Screenshot](images/tourJson.png)
-
 ```javascript
-var tours = require('../ReactTour/tour.json');
-console.log(tours);
-var express = require('express');
-
-var app = express();
-
-port = 3000; 
-
-host = '127.0.0.1'; 
-app.get('/tours',function(req,res){
-  res.send(JSON.stringify(tours), null, "\t");
+app.post('/login',express.json(),function(req,res){
+ console.log(JSON.stringify(req.body));
+  let email = req.body.email;
+  let password = req.body.password;
+  // Find user
+  let auser = hashTours.find(function (user) {
+      return user.email === email
+  });
+  if (!auser) {// Not found
+      res.status(401).json({error: true, message: "User/Password error"});
+      return;
+  }
+  let verified = bcrypt.compareSync(password, auser.password);
+  if (verified) {
+    console.log("verified");
+  } else {
+      res.status(401).json({error: true, message: "User/Password error"});
+  }
 });
-
-app.listen(port,host,function(){
-  console.log(`Tour Server listening on ${host}:${port}`);
-});
-
 ```
+![Developer-tool Screenshot](images/verified.png)
 
-### (b)
-
-![Developer-tool Screenshot](images/tourTest.png)
-
-```javascript
-const rp = require('request-promise-native');
-
-let options = {
-    uri: 'http://127.0.0.1:3000/tours',
-    method: 'GET', 
-    json: true,
-    
-};
-rp(options)
-    .then(function (res) {
-        debugger;let tourNumber=0;
-        JSON.stringify(res);
-
-        for(var val in res)
-        {tourNumber++;
-        console.log(`Tour ${tourNumber} name ${res[val].name}, date: ${res[val].date}` );}
-
-    });
-
-```
-
-## Question 5
-### (a)
-![Developer-tool Screenshot](images/tourTest.png)
-![Developer-tool Screenshot](images/addTourTest.png)
-![Developer-tool Screenshot](images/tourServerAddTour.png)
-
-```javascript
-const rp = require('request-promise-native');
-
-let options = {
-    uri: 'http://127.0.0.1:3000/tours/add',
-    method: 'POST', 
-    form: {
-        "name": "Snape's class",
-        "date": "Starting June 2020"
-        },
-    json: true,
-    resolveWithFullResponse: true
-};
-rp(options)
-    .then(function (res) {
-        debugger;
-    var addedTour = res.body;
-    console.log(addedTour);
-addedTour.map((newTour, i)=>{
-    console.log(`Tour ${i+1} name ${newTour['name']}, date ${newTour['date']}`);
-});
-  console.log(`I'm the body ${res.body}`);
-    });
-```
-
-```javascript
-const rp = require('request-promise-native');
-
-let options = {
-    uri: 'http://127.0.0.1:3000/tours',
-    method: 'GET', 
-    json: true,
-    
-};
-rp(options)
-    .then(function (res) {
-        debugger;let tourNumber=0;
-        for(var val in res)
-        {tourNumber++;
-        console.log(`Tour ${tourNumber} name ${res[val].name}, date: ${res[val].date}` );}
-    });
-
-```
+![Developer-tool Screenshot](images/error.png)
