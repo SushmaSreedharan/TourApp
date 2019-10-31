@@ -140,7 +140,7 @@ fs.writeFileSync("userTourHash.json", JSON.stringify(hashedUsers, null, 2));
 
 ### (b)
 
-![Developer-tool Screenshot](images/hassPassword.png)
+![Developer-tool Screenshot](images/hashPassword.png)
 
 ## Question 4
 
