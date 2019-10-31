@@ -62,6 +62,12 @@ Something you are: biometric pattern of fingerprint
 
 "Role-based access control (RBAC) is a method of regulating access to computer or network resources based on the roles of individual users within an enterprise."
 
+Why is it important to keep logs of various activities associated with your web app?
+
+1. To identify who is using the application
+2. Whether that person is authorized to use it
+3. To know how they use the web application
+
 
 ### (d)
 
@@ -164,3 +170,33 @@ app.post('/login',express.json(),function(req,res){
 ![Developer-tool Screenshot](images/verified.png)
 
 ![Developer-tool Screenshot](images/error.png)
+
+## Question 5
+
+![Developer-tool Screenshot](images/verifiedUser.png)
+
+![Developer-tool Screenshot](images/error1.png)
+
+![Developer-tool Screenshot](images/error2.png)
+
+
+```javascript
+const rp = require('request-promise-native');
+
+let options = {
+    uri: 'http://127.0.0.1:3000/login',
+    method: 'POST', 
+    json: true,
+    body:{ firstName: "Luna",
+    lastName: "Munoz",
+    email: "sylvan2059@live.com",
+    password: "1wQX_lYt",
+    role: "customer"}
+};
+rp(options)
+    .then(function (res) {
+        console.log("Good email, good password");
+    }).catch(rej=>{
+        console.log(rej);
+    });
+```

@@ -34,9 +34,9 @@ app.post('/login',express.json(),function(req,res){
   }
   let verified = bcrypt.compareSync(password, auser.password);
   if (verified) {
-    console.log("verified");
+    console.log("Good Login Test result");
   } else {
-      res.status(401).json({error: true, message: "User/Password error"});
+      res.status(401).json({error: true, message: "Good email, incorrect password"});
   }
 });
 app.listen(port,host,function(){
