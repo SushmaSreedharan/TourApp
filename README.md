@@ -43,3 +43,21 @@ async function initialize() { // so I can await!
 
 initialize(); // don't forget to run the async function
 ```
+
+
+```javascript
+const db = new DataStore({filename: __dirname + './usersDB', autoload: true});
+var users = require('./tour.json');
+app.get('/tours',function(req,res){
+  db.insert(users, function(err, newDocs) {
+    if(err) {
+      console.log("Something went wrong when writing");
+      console.log(err);
+    } else {
+      console.log("Added " + newDocs.length + " tours");
+    }
+  });  
+  res.send(users);
+});
+```
+

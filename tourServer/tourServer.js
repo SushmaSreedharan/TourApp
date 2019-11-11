@@ -1,5 +1,8 @@
-var tours = require('../ReactTour/tour.json');
+// var tours = require('../ReactTour/tour.json');
+const DataStore = require('nedb');
+const db = new DataStore({filename: __dirname + './usersDB', autoload: true});
 var hashTours = require('./userTourHash');
+var users = require('./tour.json');
 const express = require('express');
 const bcrypt = require('bcryptjs');
 var app = express();
@@ -7,8 +10,15 @@ port = 3000;
 host = '127.0.0.1'; 
 
 app.get('/tours',function(req,res){
-  res.send(JSON.stringify(tours), null, "\t");
-  // res.json(tours);
+  db.insert(users, function(err, newDocs) {
+    if(err) {
+      console.log("Something went wrong when writing");
+      console.log(err);
+    } else {
+      console.log("Added " + newDocs.length + " tours");
+    }
+  });  
+  res.send(users);
 });
 app.use(express.static('public'));
 let urlencodedParser = express.urlencoded({extended: true});
