@@ -44,7 +44,9 @@ async function initialize() { // so I can await!
 initialize(); // don't forget to run the async function
 ```
 
+## Question 2
 
+### (a)
 ```javascript
 const db = new DataStore({filename: __dirname + './usersDB', autoload: true});
 var users = require('./tour.json');
@@ -60,4 +62,31 @@ app.get('/tours',function(req,res){
   res.send(users);
 });
 ```
+
+### (b)
+
+```javascript
+app.use(express.static('public'));
+let urlencodedParser = express.urlencoded({extended: true});
+app.post('/tours/add',urlencodedParser,function(req,res){
+  var newTour = req.body;
+  res.send(users);
+  console.log(newTour);
+  users.push(newTour);
+  console.log(users);
+
+  db.insert([newTour], function(err, newDocs) {
+  
+    if(err) {
+      console.log("Something went wrong when writing");
+      console.log(err);
+    } else {
+      console.log("Added " + newDocs.length + "tours");
+    }
+  });  
+  
+});
+```
+
+
 

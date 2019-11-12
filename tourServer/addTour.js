@@ -18,6 +18,6 @@ rp(options)
 addedTour.map((newTour, i)=>{
     console.log(`Tour ${i+1} name ${newTour['name']}, date ${newTour['date']}`);
 });
-  console.log(`I'm the body ${res.body}`);
+//   console.log(`I'm the body ${res.body}`);
     });
     

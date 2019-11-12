@@ -15,21 +15,35 @@ app.get('/tours',function(req,res){
       console.log("Something went wrong when writing");
       console.log(err);
     } else {
-      console.log("Added " + newDocs.length + " tours");
+      console.log("Added " + newDocs.length + "tours");
     }
   });  
   res.send(users);
 });
+
 app.use(express.static('public'));
 let urlencodedParser = express.urlencoded({extended: true});
 app.post('/tours/add',urlencodedParser,function(req,res){
   // debugger;
   // console.log('add clicked');
   var newTour = req.body;
-  res.send(tours);
+  res.send(users);
   console.log(newTour);
-  tours.push(newTour);
+  users.push(newTour);
+  console.log(users);
+
+  db.insert([newTour], function(err, newDocs) {
+  
+    if(err) {
+      console.log("Something went wrong when writing");
+      console.log(err);
+    } else {
+      console.log("Added " + newDocs.length + "tours");
+    }
+  });  
+  //  res.send(users);
 });
+
 app.post('/login',express.json(),function(req,res){
  console.log(JSON.stringify(req.body));
   let email = req.body.email;
