@@ -13,7 +13,8 @@ newUsers={
     "firstName": ele.firstName,
     "lastName": ele.lastName,
     "email": ele.email,
-    "password":passHash
+    "password":passHash,
+    "role": ele.role
 };
 hashedUsers.push(newUsers);
 }
