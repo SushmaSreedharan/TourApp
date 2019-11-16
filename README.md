@@ -170,3 +170,6 @@ app.get('/logout', function (req, res) {
 	})
 });
 ```
+### (e)
+
+![Developer-tool Screenshot](images/logintest.png)

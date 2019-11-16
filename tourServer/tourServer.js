@@ -6,11 +6,11 @@ var tours = require('./tour.json');
 const express = require('express');
 const bcrypt = require('bcryptjs');
 const session = require('express-session');
+var cookieParser = require("cookie-parser"); // For cookies
+
 var app = express();
 port = 3000; 
 host = '127.0.0.1'; 
-
-
 
 const cookieName = "rg4984"; // Session ID cookie name, use this to delete cookies too.
 app.use(session({
@@ -32,8 +32,23 @@ const setUpSessionMiddleware = function (req, res, next) {
 };
 
 app.use(setUpSessionMiddleware);
-
+app.use(cookieParser());
 app.get('/tours',function(req,res){
+  console.log("Cookies: ", req.cookies);
+  db.insert(tours, function(err, newDocs) {
+    if(err) {
+      console.log("Something went wrong when writing");
+      console.log(err);
+    } else {
+      console.log("Added " + newDocs.length + "tours");
+    }
+  });  
+  res.send(tours);
+});
+app.use(setUpSessionMiddleware);
+app.use(cookieParser());
+app.get('/login',function(req,res){
+  console.log("Cookies: ", req.cookies);
   db.insert(tours, function(err, newDocs) {
     if(err) {
       console.log("Something went wrong when writing");
@@ -86,6 +101,7 @@ app.post('/login',express.json(),function(req,res){
   if (verified) {
     // Upgrade in priveledge, should generate new session id
     // Save old session information if any, create a new session
+    console.log(req.session.cookie);
     let oldInfo = req.session.user;
     console.log(oldInfo);
     req.session.regenerate(function (err) {
