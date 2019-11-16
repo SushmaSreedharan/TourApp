@@ -20,7 +20,7 @@ let tourInfo = {
     };
 
 let loginBadEmail = {
-    uri: 'http://127.0.0.1:3000/login',
+uri: 'http://127.0.0.1:3000/login',
 json: true,
 method: "POST",
 body: {"email": "sylvan205@live.com",
@@ -69,7 +69,7 @@ try {
     res = await rp(logout);
     console.log("After logout, Cookies " + cookieJar.getCookieString(logout.uri));
     } catch (error) {
-    console.log(`Good login error: ${error}\n`);
+    console.log(`Logout error: ${error}\n`);
     }
     try {
         console.log("Login test 2: Bad email");

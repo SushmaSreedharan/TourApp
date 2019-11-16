@@ -26,7 +26,7 @@ const setUpSessionMiddleware = function (req, res, next) {
   console.log(`session object: ${JSON.stringify(req.session)}`);
   console.log(`session id: ${req.session.id}`);
   if (!req.session.user) {
-      req.session.user = {role: "customer"};
+      req.session.user = {role: "admin"};
   };
   next();
 };
@@ -62,7 +62,33 @@ app.get('/login',function(req,res){
 
 app.use(express.static('public'));
 let urlencodedParser = express.urlencoded({extended: true});
-app.post('/tours/add',urlencodedParser,function(req,res){
+// Use this middleware to restrict paths to only logged in users
+const checkCustomerMiddleware = function (req, res, next) {
+    if (req.session.user.role === "guest") {
+        res.status(401).json({error: "Not permitted"});
+        } else {
+        console.log(`Session info: ${JSON.stringify(req.session)} \n`);
+        next();
+    }
+};
+// User this middlewave to restrict paths only to admins
+const checkAdminMiddleware = function (req, res, next) {
+    if (req.session.user.role !== "admin") {
+        res.status(401).json({error: "Not permitted"});
+    } else {
+        next();
+    }
+};
+// Only available to admin, returns updated tour list.
+app.get('/addTour', checkAdminMiddleware, express.json(), function (req, res) {
+  var newTour = req.body;
+  res.send(tours);
+  console.log(newTour);
+  tours.push(newTour);
+  
+});
+
+app.post('/addTour',urlencodedParser,function(req,res){
   // debugger;
   // console.log('add clicked');
   var newTour = req.body;
@@ -70,9 +96,7 @@ app.post('/tours/add',urlencodedParser,function(req,res){
   console.log(newTour);
   tours.push(newTour);
   console.log(tours);
-
   db.insert([newTour], function(err, newDocs) {
-  
     if(err) {
       console.log("Something went wrong when writing");
       console.log(err);

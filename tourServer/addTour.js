@@ -1,7 +1,7 @@
 const rp = require('request-promise-native');
 
 let options = {
-    uri: 'http://127.0.0.1:3000/tours/add',
+    uri: 'http://127.0.0.1:3000/addTour',
     method: 'POST', 
     form: {
         "name": "Snape's class",
