@@ -283,6 +283,27 @@ someTests();
 ```
 
 ## Question 4
+
+### (a)
+
+```javascript
+const checkAdminMiddleware = function (req, res, next) {
+    if (req.session.user.role !== "admin") {
+        res.status(401).json({error: "Not permitted"});
+    } else {
+        next();
+    }
+};
+// Only available to admin, returns updated tour list.
+app.get('/addTour', checkAdminMiddleware, express.json(), function (req, res) {
+  var newTour = req.body;
+  res.send(tours);
+  console.log(newTour);
+  tours.push(newTour);
+  
+});
+```
+
 ![Developer-tool Screenshot](images/addTcheck.png)
 
 ```javascript

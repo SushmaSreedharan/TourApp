@@ -41,9 +41,16 @@ let loginAdmin = {
     method: "POST",
     body: {"email": "sylvan2059@live.com",
     "password": "1wQX_lYt"},
-    
     jar:cookieJar
     };
+    let loginCust = {
+        uri: 'http://127.0.0.1:3000/login',
+        json: true,
+        method: "POST",
+        body: {"email": "sylvan2059@live.com",
+        "password": "1wQX_lYt", "role":"customer"},
+        jar:cookieJar
+        };
 
 let tourInfo = {
     uri: 'http://127.0.0.1:3000/tours',
@@ -56,7 +63,6 @@ let tourInfo = {
 async function someTests() {
     try {
         console.log("Admin login: add tour");
-        await rp(tourInfo);
         console.log("Called tour, Cookies " + cookieJar.getCookieString(tourInfo.uri));
         }
         catch (error) {
@@ -64,8 +70,10 @@ async function someTests() {
             }
         
         try {
+            await rp(tourInfo);
         res = await rp(loginAdmin);
         console.log(`Admin login test result: ${JSON.stringify(res)}\n`);
+
         console.log("After admin login, Cookies " + cookieJar.getCookieString(loginAdmin.uri));
         } catch (error) {
         console.log(`Good login error: ${error}\n`);
