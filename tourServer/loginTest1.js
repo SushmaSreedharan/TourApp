@@ -39,7 +39,7 @@ let loginCust = {
 async function someTests() {
     console.log("Try adding tour without logging in");
     try {
-        let res1 = await rp(addTour);
+        let res1 = await rp(loginOptions);
         console.log(`Add Tour result: ${JSON.stringify(res1)}`);
     } catch (e) {
         console.log(`Error: ${e}\n`);

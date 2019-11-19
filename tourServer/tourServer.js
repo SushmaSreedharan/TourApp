@@ -26,7 +26,7 @@ const setUpSessionMiddleware = function (req, res, next) {
   console.log(`session object: ${JSON.stringify(req.session)}`);
   console.log(`session id: ${req.session.id}`);
   if (!req.session.user) {
-      req.session.user = {role: "admin"};
+      req.session.user = {role: "guest"};
   };
   next();
 };
@@ -80,12 +80,11 @@ const checkAdminMiddleware = function (req, res, next) {
     }
 };
 // Only available to admin, returns updated tour list.
-app.get('/addTour', checkAdminMiddleware, express.json(), function (req, res) {
+app.post('/addTour', checkAdminMiddleware, express.json(), function (req, res) {
   var newTour = req.body;
   res.send(tours);
   console.log(newTour);
   tours.push(newTour);
-  
 });
 
 app.post('/addTour',urlencodedParser,function(req,res){
