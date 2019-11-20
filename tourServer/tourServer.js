@@ -63,14 +63,14 @@ app.get('/login',function(req,res){
 app.use(express.static('public'));
 let urlencodedParser = express.urlencoded({extended: true});
 // Use this middleware to restrict paths to only logged in users
-const checkCustomerMiddleware = function (req, res, next) {
-    if (req.session.user.role === "guest") {
-        res.status(401).json({error: "Not permitted"});
-        } else {
-        console.log(`Session info: ${JSON.stringify(req.session)} \n`);
-        next();
-    }
-};
+// const checkCustomerMiddleware = function (req, res, next) {
+//     if (req.session.user.role === "guest") {
+//         res.status(401).json({error: "Not permitted"});
+//         } else {
+//         console.log(`Session info: ${JSON.stringify(req.session)} \n`);
+//         next();
+//     }
+// };
 // User this middlewave to restrict paths only to admins
 const checkAdminMiddleware = function (req, res, next) {
     if (req.session.user.role !== "admin") {
