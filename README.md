@@ -298,6 +298,8 @@ const checkAdminMiddleware = function (req, res, next) {
 ```
 ### (b)
 
+![Developer-tool Screenshot](images/addTcheck.png)
+
 ```javascript
 const rp = require('request-promise-native');
 let cookieJar = rp.jar();
