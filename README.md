@@ -287,26 +287,6 @@ someTests();
 ### (a)
 
 ```javascript
-const checkAdminMiddleware = function (req, res, next) {
-    if (req.session.user.role !== "admin") {
-        res.status(401).json({error: "Not permitted"});
-    } else {
-        next();
-    }
-};
-// Only available to admin, returns updated tour list.
-app.get('/addTour', checkAdminMiddleware, express.json(), function (req, res) {
-  var newTour = req.body;
-  res.send(tours);
-  console.log(newTour);
-  tours.push(newTour);
-  
-});
-```
-
-![Developer-tool Screenshot](images/addTcheck.png)
-
-```javascript
 const rp = require('request-promise-native');
 let cookieJar = rp.jar();
 
@@ -377,62 +357,63 @@ async function someTests() {
         } catch (error) {
         console.log(`Good login error: ${error}\n`);
         }
+
 try {
-rp(tourInfo).then(function (res) {
+    res = await rp(tourInfo);
         console.log(`Admin visit, no of tours ${(res.body.length)-1}`);
-    });
-rp(addTour)
-    .then(function (res) {
+    res = await rp(addTour);
         console.log(`Admin add tour test, no of tours ${res.body.length}`);
-    });
+  
 }
 catch (error) {
     console.log(`Good login error: ${error}\n`);
     }
 
+
 try {
-   await rp(logout);
+   res = await rp(logout);
     console.log("After logout, Cookies " + cookieJar.getCookieString(logout.uri));
     } catch (error) {
     console.log(`Logout error: ${error}\n`);
     }
-    try {
+
         console.log("Test 2 Customer add tour");
         console.log("Called tour, Cookies " + cookieJar.getCookieString(tourInfo.uri));
-        }
-        catch (error) {
-            console.log(`Good login error: ${error}\n`);
-            }
+        
         try {
-        await rp(tourInfo);
         res = await rp(loginCust);
         console.log(`Customer login test result: ${JSON.stringify(res)}\n`);
+        await rp(addTour);
         console.log("After customer login, Cookies " + cookieJar.getCookieString(loginCust.uri));
-
+        console.log("customer add tour error",);
         } catch (error) {
-            console.log("customer add tour error",);
-            res.status(401).json({error: true, message: "Not permitted"});
-          
             
-        }
-     try{
-        
-            rp(addTour).then(function (res) {
-           
-                    console.log(`Customer visit, no of tours ${(res.body.length)-1}`);
-                    console.log(`Admin add tour test, no of tours ${res.body.length}`);
-                });
+            console.log(`Customer add tour error: ${error}\n`);
 
+        }
+        try {
+            res = await rp(logout);
+             console.log("After logout, Cookies " + cookieJar.getCookieString(logout.uri));
+             } catch (error) {
+             console.log(`Logout error: ${error}\n`);
+             }
+             console.log("Test 3 Guest add tour");
             
-            }
-            catch (error) {
-                res.status(401).json({error: "Not permitted"});
              
-                }
-                
+             try {
+                res = await rp(tourInfo);
+                console.log(`Guest visit, no of tours ${(res.body.length)-1}`);
+            //  console.log(`Guest test result: ${JSON.stringify(res)}\n`);
+             await rp(addTour);
+             console.log("After guest login, Cookies " + cookieJar.getCookieString(loginCust.uri));
+             console.log("Guest add tour error",);
+             } catch (error) {
+                 
+                 console.log(`Guest add tour error: ${error}\n`);
+     
+             }
+
 }
 someTests();
-
-
 
 ```

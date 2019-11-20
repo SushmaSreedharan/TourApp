@@ -68,82 +68,61 @@ async function someTests() {
         } catch (error) {
         console.log(`Good login error: ${error}\n`);
         }
+
 try {
-rp(tourInfo).then(function (res) {
+    res = await rp(tourInfo);
         console.log(`Admin visit, no of tours ${(res.body.length)-1}`);
-    });
-rp(addTour)
-    .then(function (res) {
+    res = await rp(addTour);
         console.log(`Admin add tour test, no of tours ${res.body.length}`);
-    });
+  
 }
 catch (error) {
     console.log(`Good login error: ${error}\n`);
     }
 
+
 try {
-   await rp(logout);
+   res = await rp(logout);
     console.log("After logout, Cookies " + cookieJar.getCookieString(logout.uri));
     } catch (error) {
     console.log(`Logout error: ${error}\n`);
     }
-    try {
+
         console.log("Test 2 Customer add tour");
         console.log("Called tour, Cookies " + cookieJar.getCookieString(tourInfo.uri));
-        }
-        catch (error) {
-            console.log(`Good login error: ${error}\n`);
-            }
+        
         try {
-        await rp(tourInfo);
         res = await rp(loginCust);
         console.log(`Customer login test result: ${JSON.stringify(res)}\n`);
+        await rp(addTour);
         console.log("After customer login, Cookies " + cookieJar.getCookieString(loginCust.uri));
-
+        console.log("customer add tour error",);
         } catch (error) {
-            console.log("customer add tour error",);
-            res.status(401).json({error: true, message: "Not permitted"});
-          
             
+            console.log(`Customer add tour error: ${error}\n`);
+
         }
-     try{
-        
-            rp(addTour).then(function (res) {
-           
-                    console.log(`Customer visit, no of tours ${(res.body.length)-1}`);
-                    console.log(`Admin add tour test, no of tours ${res.body.length}`);
-                });
+        try {
+            res = await rp(logout);
+             console.log("After logout, Cookies " + cookieJar.getCookieString(logout.uri));
+             } catch (error) {
+             console.log(`Logout error: ${error}\n`);
+             }
+             console.log("Test 3 Guest add tour");
             
-            // rp(addTour)
-            //     .then(function (res) {
-            //         console.log(`Admin add tour test, no of tours ${res.body.length}`);
-            //     });
-            // res = await rp(addTour);
-            
-            }
-            catch (error) {
-                console.log("customer add tour error",);
-                res.status(401).json({error: "Not permitted"});
              
-                }
-                try {
-                    console.log("Test 2 Customer add tour");
-                    console.log("Called tour, Cookies " + cookieJar.getCookieString(tourInfo.uri));
-                    }
-                    catch (error) {
-                        console.log(`Good login error: ${error}\n`);
-                        }
-                    try {
-                    await rp(tourInfo);
-                    res = await rp(loginGuest);
-                    console.log(`Customer login test result: ${JSON.stringify(res)}\n`);
-                    console.log("After customer login, Cookies " + cookieJar.getCookieString(loginGuest.uri));
-            
-                    } catch (error) {
-                       
-                        res.status(401).json({error: true, message: "Not permitted"});
-                      
-                        
-                    }
+             try {
+                res = await rp(tourInfo);
+                console.log(`Guest visit, no of tours ${(res.body.length)-1}`);
+                console.log("After guest visit, Cookies " + cookieJar.getCookieString(tourInfo.uri));
+             await rp(addTour);
+             console.log("After guest login, Cookies " + cookieJar.getCookieString(loginCust.uri));
+             console.log("Guest add tour error",);
+             } catch (error) {
+                 
+                 console.log(`Guest add tour error: ${error}\n`);
+     
+             }
+
 }
 someTests();
