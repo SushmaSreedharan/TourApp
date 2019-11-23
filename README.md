@@ -86,3 +86,8 @@ Path: http://hogwarts.tour.com/tour-management/users/{id}/removeUser
 
 Path: http://hogwarts.tour.com/tour-management/customer/{id}/signup/tourInfo/{tour-id}
 
+
+## Question 3
+
+### (a)
+![Developer-tool Screenshot](images/mochaTest.png)
