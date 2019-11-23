@@ -3,6 +3,7 @@ const assert = require('chai').assert;
 const request = require('supertest'); 
 const cookie = require('cookie');
 
+
 describe('Get Tour Tests', function () {
 	let response;
 	let tours = null;
@@ -23,8 +24,10 @@ describe('Get Tour Tests', function () {
 	});
 	it('Cookie with appropriate name is returned', function(){
 		let cookies = response.header['set-cookie'].map(cookie.parse);
-		let mycookie = cookies.filter(c => c.hasOwnProperty('TourSid'));
+		let mycookie = cookies.filter(c => c.hasOwnProperty('rg4984'));
 		assert.notEmpty(mycookie);
 	});
 })
+
+//module.exports = server
 	

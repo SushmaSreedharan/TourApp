@@ -153,3 +153,5 @@ app.get('/logout', function (req, res) {
 app.listen(port,host,function(){
   console.log(`Tour Server listening on ${host}:${port}`);
 });
+
+module.exports = app;

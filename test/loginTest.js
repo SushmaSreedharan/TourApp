@@ -1,4 +1,4 @@
-const app = require('../tourServer/tourServer');
+const app = require('../tourServer');
 const assert = require('chai').assert;
 const request = require('supertest'); 
 const cookie = require('cookie');
