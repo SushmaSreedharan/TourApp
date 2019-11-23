@@ -45,6 +45,7 @@ Error:  204 (No Content)
 
 ### (d)
 **Edit a tour**
+
 Path: http://hogwarts.tour.com/tour-management/admin/editTour/{tour-id}
 
 Roles: Admin
@@ -66,3 +67,22 @@ Method: DELETE
 
 Success: 202 (Accepted)
 Error: 404 (NOT FOUND) 
+
+## Question 2
+
+### (a) Allow a user to see all the tours they are signed up for
+
+Path: http://hogwarts.tour.com/tour-management/users/{id}/toursInfo
+
+### (b) Allow a user to signup
+
+Path: http://hogwarts.tour.com/tour-management/users/{id}/signup
+
+### (c) Allow a user to remove themselves
+
+Path: http://hogwarts.tour.com/tour-management/users/{id}/removeUser
+
+### (d) Get all the customers signed up on a particular tour
+
+Path: http://hogwarts.tour.com/tour-management/customer/{id}/signup/tourInfo/{tour-id}
+
