@@ -21,7 +21,7 @@ describe('Login Tests', function () {
 	describe('Login Sequence', function() {
 		before(async function(){
 			response = await agent.post('/login')
-				.send({"email": "stedhorses1903@yahoo.com",	"password": "nMQs)5Vi"});
+				.send({"email": "sylvan2059@live.com",	"password": "1wQX_lYt"});
 		});
 		it('Login Good', function(){
 			assert.equal(response.status, 200);
@@ -32,9 +32,9 @@ describe('Login Tests', function () {
 		});
 		it('Cookie session ID changed', function () {
 			let cookies = response.header['set-cookie'].map(cookie.parse);
-			cookies = cookies.filter(c => c.hasOwnProperty('TourSid'));
+			cookies = cookies.filter(c => c.hasOwnProperty('rg4984'));
 			assert.notEmpty(cookies);
-			assert.notEqual(cookies[0]['TourSid'], myCookie['TourSid']);
+			assert.notEqual(cookies[0]['rg4984'], myCookie['rg4984']);
 			//console.log(cookies[0]['TourSid'], myCookie['TourSid']);
 		});
 	});
