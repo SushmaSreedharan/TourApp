@@ -1,8 +1,8 @@
 // var tours = require('../ReactTour/tour.json');
 const DataStore = require('nedb');
 const db = new DataStore({filename: __dirname + './usersDB', autoload: true});
-var hashTours = require('./userTourHash');
-var tours = require('./tour.json');
+var hashTours = require('./tourServer/userTourHash');
+var tours = require('./tourServer/tour.json');
 const express = require('express');
 const bcrypt = require('bcryptjs');
 const session = require('express-session');

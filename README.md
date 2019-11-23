@@ -91,3 +91,6 @@ Path: http://hogwarts.tour.com/tour-management/customer/{id}/signup/tourInfo/{to
 
 ### (a)
 ![Developer-tool Screenshot](images/mochaTest.png)
+
+### (b)
+![Developer-tool Screenshot](images/separateServer.png)
