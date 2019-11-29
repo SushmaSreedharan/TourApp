@@ -162,7 +162,7 @@ describe('Get an individual tour', function () {
 		before(async function(){
 			response = await request(app).get('/tours/nonexistingtourid');
 		})
-		it('Getting an existing tour ', async function(){
+		it('Getting a non existing tour ', async function(){
 			assert.equal(response.status, 404);
 		});
 	})
