@@ -29,5 +29,37 @@ describe('Get Tour Tests', function () {
 	});
 })
 
-//module.exports = server
+describe('Get an individual tour', function () {
+	describe('Trying path /tours/6NzrXVT0RG3QPc1M', function () {
+	let response;
+	let tours = null;
+	before(async function(){
+		response = await request(app).get('/tours/6NzrXVT0RG3QPc1M');
+	})
+	it('Getting an existing tour ', async function(){
+		assert.equal(response.status, 200);
+	});
+
+	describe('Trying path /tours/7nTII3KlO5cmnga3', function () {
+	let response;
+	before(async function(){
+		response = await request(app).get('/tours/7nTII3KlO5cmnga3');
+	})
+	it('Getting an existing tour ', async function(){
+		assert.equal(response.status, 200);
+	});
+	describe('Trying path /tours/nonexistingtourid', function () {
+		let response;
+		let tours = null;
+		before(async function(){
+			response = await request(app).get('/tours/nonexistingtourid');
+		})
+		it('Getting an existing tour ', async function(){
+			assert.equal(response.status, 404);
+		});
+	})
+})
+})
+})
+
 	

@@ -45,6 +45,15 @@ app.get('/tours',function(req,res){
   });  
   res.send(tours);
 });
+
+app.get('/tours/6NzrXVT0RG3QPc1M',function(req,res){
+  res.send(tours);
+});
+
+app.get('/tours/7nTII3KlO5cmnga3',function(req,res){
+  res.send(tours);
+});
+
 app.use(setUpSessionMiddleware);
 app.use(cookieParser());
 app.get('/login',function(req,res){
