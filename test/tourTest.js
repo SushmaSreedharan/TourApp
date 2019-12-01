@@ -62,4 +62,13 @@ describe('Get an individual tour', function () {
 })
 })
 
-	
+describe('Add tour test', function () {
+	let response;
+	let tours = null;
+	before(async function(){
+		response = await request(app).get('/tours/addtour');
+	})
+	it('Getting an existing tour ', async function(){
+		assert.equal(response.status, 200);
+	});
+})

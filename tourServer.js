@@ -1,4 +1,5 @@
 // var tours = require('../ReactTour/tour.json');
+const tourDB = require('./tourDBRef'); 
 const DataStore = require('nedb');
 const db = new DataStore({filename: __dirname + './usersDB', autoload: true});
 var hashTours = require('./tourServer/userTourHash');
